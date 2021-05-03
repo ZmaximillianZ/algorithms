@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/app
+    working_dir: /app

@@ -1,0 +1,10 @@
+parameters:
+
+services:
+  run_algorithm:
+      class: App\Command\RunAlgorithm
+      arguments:
+        - '@algorithm'
+
+  algorithm:
+      class: App\Service\Algorithms\Algorithm
