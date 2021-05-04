@@ -37,7 +37,7 @@ class MergeIntervals extends AbstractAlgorithm implements AlgorithmInterface
                 $next = $intervals[$i + 1];
             }
             if (!empty($next) && $current[1] >= $next[0]) {
-                $result[] = [$current[0], $next[1]];
+                $result[] = [$current[0], ($current[1] > $next[1]) ? $current[1] : $next[1]];
                 $next = [];
                 ++$i;
                 continue;
