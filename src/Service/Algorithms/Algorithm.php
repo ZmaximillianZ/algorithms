@@ -12,6 +12,7 @@ class Algorithm
         $this->algorithmsList = [
             AddTwoNumbers::getName() => AddTwoNumbers::class,
             SplitIntoGroups::getName() => SplitIntoGroups::class,
+            TwoSum::getName() => TwoSum::class,
         ];
     }
 
@@ -20,6 +21,7 @@ class Algorithm
         return [
             AddTwoNumbers::getName() => AddTwoNumbers::getDescription(),
             SplitIntoGroups::getName() => SplitIntoGroups::getDescription(),
+            TwoSum::getName() => TwoSum::getDescription(),
         ];
     }
 
@@ -62,6 +64,10 @@ class Algorithm
         }
         if ($algorithm instanceof SplitIntoGroups) {
             $algorithm->setString('Привет мир! Это проект Максима по изучению алгоритмов!'); // 54 symbols
+        }
+        if ($algorithm instanceof TwoSum) {
+            $algorithm->setNums([2, 7, 11, 15]);
+            $algorithm->setTarget(26);
         }
 
         return $algorithm;
