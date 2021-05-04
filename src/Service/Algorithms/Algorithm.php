@@ -13,6 +13,7 @@ class Algorithm
             AddTwoNumbers::getName() => AddTwoNumbers::class,
             SplitIntoGroups::getName() => SplitIntoGroups::class,
             TwoSum::getName() => TwoSum::class,
+            MergeIntervals::getName() => MergeIntervals::class,
         ];
     }
 
@@ -22,6 +23,7 @@ class Algorithm
             AddTwoNumbers::getName() => AddTwoNumbers::getDescription(),
             SplitIntoGroups::getName() => SplitIntoGroups::getDescription(),
             TwoSum::getName() => TwoSum::getDescription(),
+            MergeIntervals::getName() => MergeIntervals::getDescription(),
         ];
     }
 
@@ -68,6 +70,9 @@ class Algorithm
         if ($algorithm instanceof TwoSum) {
             $algorithm->setNums([2, 7, 11, 15]);
             $algorithm->setTarget(26);
+        }
+        if ($algorithm instanceof MergeIntervals) {
+            $algorithm->setIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]);
         }
 
         return $algorithm;

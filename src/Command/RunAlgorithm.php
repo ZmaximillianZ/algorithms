@@ -42,6 +42,9 @@ class RunAlgorithm extends Command
         );
     }
 
+    /**
+     * @throws \JsonException
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $algList = $input->getOption(self::ARG_ALG_LIST);
@@ -66,7 +69,7 @@ class RunAlgorithm extends Command
         }
         $algorithm = $this->algorithm->buildAlgorithm($this->algorithm->resolve($alg));
         $this->algorithm->setAlgorithm($algorithm);
-        $output->writeln($this->algorithm->execute());
+        $output->writeln(json_encode($this->algorithm->execute(), JSON_INVALID_UTF8_IGNORE, 2));
 
         return Command::SUCCESS;
     }
